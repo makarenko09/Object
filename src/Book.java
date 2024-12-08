@@ -1,16 +1,16 @@
 public class Book {
-    private String Author;
+    private Author author;
     private String title;
     private int realise;
 
-    public Book(String author, String title, int realise) {
-        this.Author = author;
+    public Book(Author author, String title, int realise) {
+        this.author = author;
         this.title = title;
         this.realise = realise;
     }
 
-    public String getAuthor() {
-        return this.Author;
+    public Author getAuthor() {
+        return author;
     }
 
     public String getTitle() {
