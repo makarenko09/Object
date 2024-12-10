@@ -10,10 +10,14 @@ public class Book {
     }
 
     public Author getAuthor() {
-        return author;
+        return this.author;
     }
 
-    public String getTitle() {
+    public String toString() {
+        // Используйте метод toString() класса Author для получения информации о авторе
+        return "AuthorFromClass: " + author.toString();
+    }
+        public String getTitle() {
         return this.title;
     }
 

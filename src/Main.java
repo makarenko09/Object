@@ -1,10 +1,21 @@
 public class Main {
     public static void main(String[] args) {
         Author rasputinAuthor = new Author("Григорий", "Распутин");
-
         System.out.println("rasputin.name =" + rasputinAuthor.getName());
         System.out.println("rasputin.surename =" + rasputinAuthor.getSurname());
+
         Book rasputin = new Book(rasputinAuthor, "Мои мысли и размышления", 1915);
+
+        public String getInfoAboutAuthorFromBornBook () {
+//Метод toString() корректно реализован в классах Author и ...
+            System.out.println("rasputin.author = " + rasputinAuthor.toString());
+
+        }
+//.. Book.
+        System.out.println(rasputin.toString());
+
+        //
+        System.out.println(equals);
 
         System.out.println("rasputin.author = " + rasputin.getAuthor());
         System.out.println("rasputin.Title = " + rasputin.getTitle());
