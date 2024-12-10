@@ -5,17 +5,16 @@ public class Main {
         System.out.println("rasputin.surename =" + rasputinAuthor.getSurname());
 
         Book rasputin = new Book(rasputinAuthor, "Мои мысли и размышления", 1915);
-
-        public String getInfoAboutAuthorFromBornBook () {
-//Метод toString() корректно реализован в классах Author и ...
-            System.out.println("rasputin.author = " + rasputinAuthor.toString());
-
-        }
-//.. Book.
+        //Метод toString() корректно реализован в классах Author и ...
+        System.out.println("rasputin.author = " + rasputinAuthor.toString());
+        //.. Book.
         System.out.println(rasputin.toString());
-
-        //
-        System.out.println(equals);
+        //equal
+        System.out.println(rasputin.equalsMethod(rasputin.getAuthor(), rasputin.toString()));
+        System.out.println("rasputin.equalsMethod(rasputin.getAuthor(), rasputin.toString()) = " + rasputin.getAuthor().equals(rasputin.toString()));
+        //equal for second Class
+        System.out.println("equalsMethodForClass writing it:= " + rasputinAuthor.equalsMethodForClass(rasputinAuthor.getName(), rasputinAuthor.getSurname()));
+        System.out.println("rasputinAuthor.equalsMethodForClass(rasputinAuthor.getName(), rasputinAuthor.getSurname())" + rasputinAuthor.toString().equals(rasputinAuthor.getName() + rasputinAuthor.getSurname()));
 
         System.out.println("rasputin.author = " + rasputin.getAuthor());
         System.out.println("rasputin.Title = " + rasputin.getTitle());

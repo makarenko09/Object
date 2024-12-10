@@ -15,9 +15,18 @@ public class Book {
 
     public String toString() {
         // Используйте метод toString() класса Author для получения информации о авторе
-        return "AuthorFromClass: " + author.toString();
+        return "AuthorFromClass:= " + author.toString();
     }
-        public String getTitle() {
+
+    public boolean equalsMethod (Author getAuthor, String toString) {
+        if (getAuthor.equals(author.toString()) || author.toString().equals(getAuthor)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public String getTitle() {
         return this.title;
     }
 

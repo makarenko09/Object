@@ -18,4 +18,12 @@ public class Author {
     public String toString() {
         return "Name: " + getName() + ", Surname: " + getSurname();
     }
+
+    public boolean equalsMethodForClass (String name, String surname) {
+        if (name.equals(surname) || surname.equals(name)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
