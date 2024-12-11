@@ -18,12 +18,20 @@ public class Book {
         return "AuthorFromClass:= " + author.toString();
     }
 
-    public boolean equalsMethod (Author getAuthor, String toString) {
+    public boolean equals (Author getAuthor, String toString) {
         if (getAuthor.equals(author.toString()) || author.toString().equals(getAuthor)) {
             return true;
         } else {
             return false;
         }
+    }
+
+    //    hashCode
+    public String hashCode (Author getAuthor, String toString) {
+        int resultHashOfMethodGetAuthorAndToString = getAuthor.hashCode() + author.toString().hashCode();
+//        int resultOfMethodToString = author.toString().hashCode();
+        return  "@" + resultHashOfMethodGetAuthorAndToString;
+
     }
 
     public String getTitle() {
@@ -37,5 +45,6 @@ public class Book {
     public void setRealiseYear(int realise) {
         this.realise = realise;
     }
+
 
 }

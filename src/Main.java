@@ -10,19 +10,23 @@ public class Main {
         //.. Book.
         System.out.println(rasputin.toString());
         //equal
-        System.out.println(rasputin.equalsMethod(rasputin.getAuthor(), rasputin.toString()));
+        System.out.println(rasputin.equals(rasputin.getAuthor(), rasputin.toString()));
         System.out.println("rasputin.equalsMethod(rasputin.getAuthor(), rasputin.toString()) = " + rasputin.getAuthor().equals(rasputin.toString()));
         //equal for second Class
-        System.out.println("equalsMethodForClass writing it:= " + rasputinAuthor.equalsMethodForClass(rasputinAuthor.getName(), rasputinAuthor.getSurname()));
-        System.out.println("rasputinAuthor.equalsMethodForClass(rasputinAuthor.getName(), rasputinAuthor.getSurname())" + rasputinAuthor.toString().equals(rasputinAuthor.getName() + rasputinAuthor.getSurname()));
-
+        System.out.println("equalsMethodForClass writing it:= " + rasputinAuthor.equals(rasputinAuthor.getName(), rasputinAuthor.getSurname()));
+        System.out.println("rasputinAuthor.equalsMethodForClass(rasputinAuthor.getName(), rasputinAuthor.getSurname()) =" + rasputinAuthor.toString().equals(rasputinAuthor.getName() + rasputinAuthor.getSurname()));
+        //hashCode
+        System.out.println("rasputin.hashCode(rasputin.getAuthor(), rasputin.toString()) = " + rasputin.hashCode(rasputin.getAuthor(), rasputin.toString()));
+        System.out.println("rasputinAuthor.hashCode() = " + rasputinAuthor.getName().hashCode() + rasputinAuthor.getSurname().hashCode());
+        System.out.println("return  \"@\" + resultHashOfMethodStringNameAndSurename; = " + rasputinAuthor.hashCode(rasputinAuthor.getName(), rasputinAuthor.getSurname()));
+        //other code
         System.out.println("rasputin.author = " + rasputin.getAuthor());
         System.out.println("rasputin.Title = " + rasputin.getTitle());
         System.out.println("rasputin.RealiseYear = " + rasputin.getRealiseYear());
 
         rasputin.setRealiseYear(2013);
         System.out.println("rasputin.RealiseYear = " + rasputin.getRealiseYear());
-        //
+        //v2
         Author zelandAuthor = new Author("Вадим", "Зеланд");
 
         System.out.println("zeland.name =" + zelandAuthor.getName());

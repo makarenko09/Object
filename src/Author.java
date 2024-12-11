@@ -19,11 +19,18 @@ public class Author {
         return "Name: " + getName() + ", Surname: " + getSurname();
     }
 
-    public boolean equalsMethodForClass (String name, String surname) {
+    public boolean equals (String name, String surname) {
         if (name.equals(surname) || surname.equals(name)) {
             return true;
         } else {
             return false;
         }
     }
+
+    public String hashCode (String name, String surname) {
+        int resultHashOfMethodStringNameAndSurename = this.name.hashCode()+ this.surname.hashCode();
+        return  "@" + resultHashOfMethodStringNameAndSurename;
+
+    }
+
 }
