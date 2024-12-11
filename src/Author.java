@@ -1,3 +1,6 @@
+import java.lang.reflect.Method;
+import java.util.Objects;
+
 public class Author {
     private String name;
     private String surname;
@@ -8,29 +11,46 @@ public class Author {
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public String getSurname() {
-        return this.surname;
+        return surname;
     }
 
     public String toString() {
-        return "Name: " + getName() + ", Surname: " + getSurname();
+        checkIfMethodOverrides("toString");
+        return "Author{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                '}';
     }
 
-    public boolean equals (String name, String surname) {
-        if (name.equals(surname) || surname.equals(name)) {
-            return true;
-        } else {
-            return false;
+    public boolean equals(Object o) {
+        checkIfMethodOverrides("equals");
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return name.equals(author.name) && surname.equals(author.surname);
+    }
+
+
+public int hashCode() {
+    checkIfMethodOverrides("hashCode");
+    return Objects.hash(name, surname);
+}
+
+private void checkIfMethodOverrides(String methodName) {
+    try {
+        Method[] methods = getClass().getSuperclass().getMethods();
+        for (Method method : methods) {
+            if (method.getName().equals(methodName)) {
+                System.out.println(methodName + " method overrides superclass method.");
+                return;
+            }
         }
+    } catch (Exception e) {
+        System.out.println("Error checking if method overrides superclass method: " + e.getMessage());
     }
-
-    public String hashCode (String name, String surname) {
-        int resultHashOfMethodStringNameAndSurename = this.name.hashCode()+ this.surname.hashCode();
-        return  "@" + resultHashOfMethodStringNameAndSurename;
-
-    }
-
+}
 }
